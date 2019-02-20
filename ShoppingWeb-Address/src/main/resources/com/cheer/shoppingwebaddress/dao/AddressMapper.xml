@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebaddress.dao.AddressMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="AddressAll" resultMap="address">
+        select * from address where userId = #{userId}
+    </select>
+    <resultMap id="address" type="com.cheer.shoppingwebaddress.model.Address">
+        <id property="addressId" column="addressId"></id>
+        <result property="addressAlias" column="addressAlias"></result>
+        <result property="addressName" column="addressName"></result>
+        <result property="addressDistrict" column="addressDistrict"></result>
+        <result property="addressDetailed" column="addressDetailed"></result>
+        <result property="addressPhone" column="addressPhone"></result>
+        <association property="defaultaddress" column="addressId" javaType="com.cheer.shoppingwebaddress.model.Defaultaddress" fetchType="lazy" select="com.cheer.shoppingwebaddress.dao.DefaultaddressMapper.Default"></association>
+    </resultMap>
+
+    <update id="updateAddress">
+        update address
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="addressAlias != null">
+                addressAlias = #{addressAlias},
+            </if>
+            <if test="addressName != null">
+                addressName = #{addressName},
+            </if>
+            <if test="addressDistrict != null">
+                addressDistrict = #{addressDistrict},
+            </if>
+            <if test="addressDetailed != null">
+                addressDetailed = #{addressDetailed},
+            </if>
+            <if test="addressPhone != null">
+                addressPhone = #{addressPhone}
+            </if>
+        </trim>
+        where addressId = #{addressId}
+    </update>
+    <insert id="insertAddress">
+        insert into address values (#{addressId},#{addressAlias},#{addressName},#{addressDistrict},#{addressDetailed},#{addressPhone},#{userId})
+    </insert>
+    <delete id="deleteAddress">
+        delete from address where addressId = #{addressId}
+    </delete>
+</mapper>

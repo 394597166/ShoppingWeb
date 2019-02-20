@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingweborder.dao.UserorderitemMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectUserorderitemAnduserorderId" resultType="com.cheer.shoppingweborder.model.Userorderitem">
+        select * from userorderitem where userorderId = #{userorderId}
+    </select>
+    <insert id="insertUserorderitem">
+        insert into userorderitem values (#{userorderitemId},#{goodsId},#{goodsName},#{inventoryId},#{inventoryName},#{userorderitemPrice},#{userorderitemCount},#{userorderId})
+    </insert>
+</mapper>

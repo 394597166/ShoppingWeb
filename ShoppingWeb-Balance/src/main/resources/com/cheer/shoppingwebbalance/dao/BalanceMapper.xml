@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebbalance.dao.BalanceMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="getBalance" resultMap="balance">
+        select * from balance where userId = #{userId}
+    </select>
+    <resultMap id="balance" type="com.cheer.shoppingwebbalance.model.Balance">
+        <id property="balanceId" column="balanceId"></id>
+        <result property="balanceMoney" column="balanceMoney"></result>
+        <collection property="balanceItemList" column="balanceId" ofType="com.cheer.shoppingwebbalance.model.BalanceItem" fetchType="lazy" select="com.cheer.shoppingwebbalance.dao.BalanceItemMapper.getAllBalanceItem"></collection>
+    </resultMap>
+    <insert id="insertBalance">
+        insert into balance values (#{balanceId},#{balanceMoney},#{userId})
+    </insert>
+    <update id="updateBalance">
+        update balance set balanceMoney = #{balanceMoney} where balanceId = #{balanceId}
+    </update>
+</mapper>

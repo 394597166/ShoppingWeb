@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ShoppingWeb" />
+        <module name="ShoppingWeb-Address" />
+        <module name="ShoppingWeb-Admin" />
+        <module name="ShoppingWeb-Balance" />
+        <module name="ShoppingWeb-Cart" />
+        <module name="ShoppingWeb-Category" />
+        <module name="ShoppingWeb-Coupon" />
+        <module name="ShoppingWeb-Express" />
+        <module name="ShoppingWeb-Goods" />
+        <module name="ShoppingWeb-Goodscollect" />
+        <module name="ShoppingWeb-Log" />
+        <module name="ShoppingWeb-Order" />
+        <module name="ShoppingWeb-User" />
+        <module name="ShoppingWeb-Util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shoppingweb-express (1) (com.com)" target="1.8" />
+      <module name="shoppingweb-express1" target="1.8" />
+      <module name="ShoppingWeb-Express2" target="1.8" />
+      <module name="ShoppingWeb-Test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>register</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+</head>
+
+<body>
+
+<!--top 开始-->
+<div class="top">
+    <div class="top-con w1200">
+        <p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+        <ul class="t-con-r f-r">
+            <li><a href="http://localhost:8080/user/personalCenter.html">我 (个人中心)</a></li>
+            <li><a href="http://localhost:8080/cart/cart.html">我的购物车</a></li>
+            <li><a href="http://localhost:8080/order/order.html">我的订单</a></li>
+            <li class="erweima">
+                <a href="#">扫描二维码</a>
+                <div class="ewm-tu">
+                    <a href="#"><img src="../static/images/erweima-tu.jpg" /></a>
+                </div>
+            </li>
+            <li><a href="http://localhost:8080/user/logout">退出</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<!--logo search 开始-->
+<div class="hd-info1 w1200">
+    <div class="logo f-l">
+        <h1><a href="http://localhost:8080/index.html" title="宅客微购"><img src="../static/images/logo.jpg" /></a></h1>
+    </div>
+    <div class="dianji f-r">
+        <div class="btn1">
+            <a href="http://localhost:8080/user/register.html"><button class="btn1-l">注册</button></a>
+            <a href="http://localhost:8080/user/login.html"><button class="btn1-r">登录</button></a>
+            <div style="clear:both;"></div>
+        </div>
+        <a href="http://localhost:8080/admin/adminlogin.html"><button class="btn2">商家入口    ></button></a>
+    </div>
+    <div class="search f-r">
+        <ul class="sp">
+            <li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="srh">
+            <div class="ipt f-l">
+                <input id="goodsName" type="text" placeholder="搜索商品..." ss-search-show="sp" />
+            </div>
+            <button id="selectGoods" class="f-r">搜 索</button>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+    
+    <!--内容开始-->
+    <div class="password-con registered">
+    	<div class="psw">
+        	<p class="psw-p1">用户名</p>
+            <input id="username" type="text" placeholder="请输入用户名" />
+            <span id="username_span"></span>
+        </div>
+    	<div class="psw">
+        	<p class="psw-p1">输入密码</p>
+            <input id="password1" type="password" placeholder="请输入密码" />
+            <span id="password1_span"></span>
+        </div>
+    	<div class="psw">
+        	<p class="psw-p1">确认密码</p>
+            <input id="password2" type="password" placeholder="请再次确认密码" />
+            <span id="password2_span"></span>
+        </div>
+    	<div class="psw psw2">
+        	<p class="psw-p1">邮箱</p>
+            <input id="mail" type="text" placeholder="请输入邮箱" />
+            <button id="mail_button">获取邮箱验证码</button>
+            <span id="mail_span"></span>
+        </div>
+    	<div class="psw">
+        	<p class="psw-p1">验证码</p>
+            <input id="mail_input" type="password" placeholder="请输入邮箱验证码" />
+            <span id="mail_input_span"></span>
+        </div>
+        <button id="register" class="psw-btn">立即注册</button>
+        <p class="sign-in">已有账号？请<a href="login.html">登录</a></p>
+    </div>
+
+    <!--底部服务-->
+    <div class="ft-service">
+        <div class="w1200">
+            <div class="sv-con-l2 f-l">
+                <dl>
+                    <dt><a>新手上路</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/service.html">服务协议</a>
+                        <a href="http://localhost:8080/other/onlinePayment.html">在线支付</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>配送方式</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/distribution.html">配送费标准</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>购物指南</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/FAQ.html">购物常见问题</a>
+                        <a href="http://localhost:8080/other/shoppingProcess.html">购物流程</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>售后服务</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/exchanged.html">退换货政策总则</a>
+                        <a href="http://localhost:8080/other/exchanged2.html">自营商品退换货细则</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>关于我们</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/about.html">关于我们</a>
+                    </dd>
+                </dl>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="sv-con-r2 f-r">
+                <p class="sv-r-tle">151-6264-6839</p>
+                <p>周一至周五9:00-16:00</p>
+                <p>（仅收市话费）</p>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=394597166&site=qq&menu=yes" target="_blank" class="zxkf">24小时在线客服</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <!--代码区-->
+    <script src="../static/js/Md5.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //注册判断
+            var blUserName,blPassword1,blPassword2,blmailButton,blmailInput;
+            //用户名
+            var $username = $("#username");
+            var $username_span = $("#username_span");
+            $username.focus();
+            $username.on("change",checkUserName);
+            //密码
+            var $password1 = $("#password1");
+            var $password2 = $("#password2");
+            var $password1_span = $("#password1_span");
+            var $password2_span = $("#password2_span");
+            $password1.on("change",checkPassword1);
+            $password2.on("change",checkPassword2);
+            //邮箱
+            var $mail = $("#mail");
+            var $mail_button = $("#mail_button");
+            var $mail_span = $("#mail_span");
+            var mail_input = null;
+            var $mail_input = $("#mail_input");
+            var $mail_input_span = $("#mail_input_span");
+            $mail_button.on("click",checkMail);
+            $mail_input.on("change",checkCode);
+            //注册
+            var $register = $("#register");
+            $register.on("click",function () {
+                checkUserName;
+                if (blUserName) {
+                    checkPassword1();
+                    if (blPassword1) {
+                        checkPassword2();
+                        if (blPassword2) {
+                            checkMail();
+                            if (blmailButton) {
+                                checkCode();
+                                if (blmailInput) {
+                                    var newPassword = $.md5($password1.val());
+                                    $.ajax({
+                                        url: "http://localhost:8080/user/insertUser",
+                                        method: "POST",
+                                        data: {
+                                            userName:$username.val(),
+                                            userPassword:newPassword,
+                                            userEmail:$mail.val()
+                                        },
+                                        dataType: "json",
+                                        success: function (result) {
+                                            if (result) {
+                                                window.location.href="http://localhost:8080/user/login.html";
+                                            }else{
+                                                alert("用户创建失败！");
+                                                $username.val("");
+                                                $username.focus();
+                                                $password1.val("");
+                                                $password2.val("");
+                                                $mail.val("");
+                                                mail_input = null;
+                                                $mail_input.val("");
+                                                $mail.attr("readonly",false);
+                                            }
+                                        }
+                                    });
+                                }else{
+                                    alert("邮箱验证码错误！");
+                                    $mail_input.focus();
+                                }
+                            }else{
+                                alert("邮箱错误！");
+                                $mail.focus();
+                            }
+                        }else{
+                            alert("密码错误！")
+                            $password2.focus();
+                        }
+                    }else{
+                        alert("密码错误！")
+                        $password1.focus();
+                    }
+                }else{
+                    alert("用户名出错！");
+                    $username.focus();
+                }
+            });
+
+
+            //检查用户名
+            function checkUserName() {
+                blUserName = false;
+                var reg=/^[a-zA-Z][a-zA-Z0-9]{5,15}$/;
+                if ($username.val()===""){
+                    $username_span.removeClass();
+                    $username_span.text("");
+                    blUserName = false;
+                } else if (!reg.test($username.val())){
+                    $username_span.removeClass();
+                    $username_span.addClass("cuo");
+                    $username_span.text("用户名以字母开头的6-16位字符");
+                    blUserName = false;
+                }else{
+                    $.ajax({
+                        url: "http://localhost:8080/user/checkUserName",
+                        method: "POST",
+                        data: {
+                            data:$username.val()
+                        },
+                        dataType: "json",
+                        success: function (result) {
+                            if (result){
+                                $username_span.removeClass();
+                                $username_span.addClass("cuo");
+                                $username_span.text("用户名已存在");
+                                blUserName = false;
+                            }else{
+                                $username_span.removeClass();
+                                $username_span.addClass("dui");
+                                $username_span.text("");
+                                blUserName = true;
+                            }
+                        }
+                    });
+                }
+            }
+            //检查密码
+            function checkPassword1() {
+                blPassword1 = false;
+                var reg=/^[a-zA-Z0-9]{5,15}$/;
+                if ($password1.val()===""){
+                    $password1_span.removeClass();
+                    $password1_span.text("");
+                } else if (!reg.test($password1.val())){
+                    $password1_span.removeClass();
+                    $password1_span.addClass("cuo");
+                    $password1_span.text("密码不能含有非法字符，长度在6-16位");
+                }else{
+                    $password1_span.removeClass();
+                    $password1_span.addClass("dui");
+                    $password1_span.text("");
+                    blPassword1 = true;
+                }
+            }
+            function checkPassword2() {
+                blPassword2 = false;
+                var reg=/^[a-zA-Z0-9]{5,15}$/;
+                if ($password2.val()===""){
+                    $password2_span.removeClass();
+                    $password2_span.text("");
+                } else if (!reg.test($password2.val())){
+                    $password2_span.removeClass();
+                    $password2_span.addClass("cuo");
+                    $password2_span.text("密码不能含有非法字符，长度在6-16位");
+                }else if($password1.val() !== $password2.val()){
+                    $password2_span.removeClass();
+                    $password2_span.addClass("cuo");
+                    $password2_span.text("两次输入的密码不同");
+                }else{
+                    $password2_span.removeClass();
+                    $password2_span.addClass("dui");
+                    $password2_span.text("");
+                    blPassword2 = true;
+                }
+            }
+            //检查邮箱
+            function checkMail() {
+                blmailButton = false;
+                var reg=/^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+                if ($mail.val()===""){
+                    $mail_span.removeClass();
+                    $mail_span.text("");
+                    $mail.focus();
+                }else if(!reg.test($mail.val())){
+                    $mail_span.removeClass();
+                    $mail_span.addClass("cuo");
+                    $mail_span.text("Email格式不正确");
+                    $mail.focus();
+                }else if(mail_input === "" || mail_input === null){
+                    $.ajax({
+                        url: "http://localhost:8080/user/checkMail",
+                        method: "POST",
+                        data: {
+                            data:$mail.val()
+                        },
+                        dataType: "json",
+                        success: function (result) {
+                            if (result!==false){
+                                $mail_span.removeClass();
+                                $mail_span.text("");
+                                $mail_span.addClass("dui");
+                                $mail.attr("readonly",true);
+                                blmailButton = true;
+                                mail_input = result;
+                                $mail_input.focus();
+                            }else{
+                                $mail_span.removeClass();
+                                $mail_span.addClass("cuo");
+                                $mail_span.text("邮箱不存在或者已注册");
+                                blmailButton = false;
+                                $mail.focus();
+                            }
+                        }
+                    });
+                }else{
+                    blmailButton = true;
+                }
+            }
+            function checkCode() {
+                blmailInput = false;
+                if ($mail_input.val()===""){
+                    $mail_input_span.removeClass();
+                }else if($mail.val()===""){
+                    $mail_input_span.removeClass();
+                    $mail_input_span.addClass("cuo");
+                    $mail_input_span.text("邮箱不能为空");
+                }else if(mail_input===null || mail_input===""){
+                    $mail_input_span.removeClass();
+                    $mail_input_span.addClass("cuo");
+                    $mail_input_span.text("请先发送邮箱验证码");
+                }else if(mail_input == $mail_input.val()){
+                    $mail_input_span.removeClass();
+                    $mail_input_span.addClass("dui");
+                    $mail_input_span.text("");
+                    blmailInput = true;
+                }else{
+                    $mail_input_span.removeClass();
+                    $mail_input_span.addClass("cuo");
+                    $mail_input_span.text("邮箱验证码错误");
+                }
+            }
+            //搜索商品
+            var $goodsName = $("#goodsName");
+            var $selectGoods = $("#selectGoods");
+            $selectGoods.on("click",function () {
+                if ($goodsName.val()===""){
+                    alert("请输入需要搜索的内容！");
+                    $goodsName.focus();
+                }else{
+                    $.ajax({
+                        url: "http://localhost:8080/goods/selectgoods",
+                        method: "POST",
+                        data:{
+                            goodsName:$goodsName.val()
+                        },
+                        dataType: "json",
+                        success: function () {
+                            window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ShoppingWeb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Address" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Balance" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Category" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Coupon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Express" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Goods" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Goodscollect" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-User" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ShoppingWeb-Util" charset="UTF-8" />
+  </component>
+</project>

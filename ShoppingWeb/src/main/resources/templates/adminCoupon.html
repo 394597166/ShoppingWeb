@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>优惠卷管理</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+</head>
+
+<body style="position:relative;">
+    <!--nav 开始-->
+	<div class="sign-logo w1200">
+		<h1 style="font-size: 5em;text-align: center">宅客微购商家后台系统</h1>
+		<a href="http://localhost:8080/admin/adminLogout" style="float: right">退出后台系统</a>
+	</div>
+    
+    <!--内容开始-->
+    <div class="personal w1200">
+    	<div class="personal-left f-l">
+        	<div class="personal-l-tit">
+            	<h3>管理员后台</h3>
+            </div>
+            <ul>
+				<li class="per-li1"><a href="http://localhost:8080/admin/adminCoupon.html">优惠卷管理<span>></span></a></li>
+                <li class="per-li2"><a href="http://localhost:8080/admin/adminGoods.html">商品管理<span>></span></a></li>
+                <li class="per-li3"><a href="http://localhost:8080/admin/adminOrder.html">订单管理<span>></span></a></li>
+            </ul>
+        </div>
+    	<div class="personal-r f-r">
+        	<div class="personal-right">
+                <div class="personal-r-tit">
+                    <h3>优惠卷管理</h3>
+                </div>
+                <div class="data-con">
+                    <div class="dt1">
+                    	<p class="dt-p f-2">优惠卷：</p>
+                        <select id="coupon">
+                            <option value="10">满100减10元</option>
+                            <option value="20">满300减20元</option>
+                            <option value="30">满500减30元</option>
+                            <option value="40">满800减40元</option>
+                            <option value="50">满1000减50元</option>
+                        </select>
+						<div style="clear:both;"></div>
+                    </div>
+                    <div class="dt1">
+                        <p class="dt-p f-2">有效期：</p>
+                        <select id="data">
+                            <option value="1">1天</option>
+                            <option value="3">3天</option>
+                            <option value="5">5天</option>
+                            <option value="7">7天</option>
+                            <option value="9">9天</option>
+                        </select>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <button id="insertCoupon" class="btn-pst">添加优惠卷</button>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+	<script type="text/javascript">
+	$(function () {
+	    var $coupon = $("#coupon");
+	    var $data = $("#data");
+	    var $insertCoupon = $("#insertCoupon");
+        $insertCoupon.on("click",function () {
+            var couponFull,couponSubtract,data;
+            if ($coupon.val()==="10") {
+                couponFull = 100;
+                couponSubtract = 10;
+            }else if ($coupon.val()==="20") {
+                couponFull = 300;
+                couponSubtract = 20;
+            }else if ($coupon.val()==="30") {
+                couponFull = 500;
+                couponSubtract = 30;
+            }else if ($coupon.val()==="40") {
+                couponFull = 800;
+                couponSubtract = 40;
+            }else if ($coupon.val()==="50") {
+                couponFull = 1000;
+                couponSubtract = 50;
+            }
+            if ($data.val()==="1") {
+                data = 1;
+            }else if ($data.val()==="3") {
+                data = 3;
+            }else if ($data.val()==="5") {
+                data = 5;
+            }else if ($data.val()==="7") {
+                data = 7;
+            }else if ($data.val()==="9") {
+                data = 9;
+            }
+            $.ajax({
+                url: "http://localhost:8080/admin/insertCoupon",
+                method: "POST",
+                data: {
+                    couponFull:couponFull,
+                    couponSubtract:couponSubtract,
+                    data:data
+                },
+                dataType: "json",
+                success: function (result) {
+                    if (result.result){
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/admin/adminCoupon.html";
+                    }else{
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

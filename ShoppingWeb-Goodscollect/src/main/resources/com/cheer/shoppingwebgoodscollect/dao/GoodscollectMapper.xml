@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebgoodscollect.dao.GoodscollectMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+<select id="selectGoodscollectAll" resultMap="goodscollect">
+    select * from goodscollect where userId = #{userId}
+</select>
+<select id="selectGoodscollectAndgoodsIduserId" resultMap="goodscollect">
+        select * from goodscollect where userId = #{userId} And goodsId = #{goodsId}
+</select>
+<resultMap id="goodscollect" type="com.cheer.shoppingwebgoodscollect.model.Goodscollect">
+    <id property="goodscollectId" column="goodscollectId"></id>
+    <association property="goods" column="goodsId" javaType="com.cheer.shoppingwebgoods.model.Goods" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.GoodsMapper.selectGoodsAndgoodsId"></association>
+</resultMap>
+<delete id="deleteGoodscollectAndgoodscollectId">
+    delete from goodscollect where goodscollectId = #{goodscollectId}
+</delete>
+<insert id="insertGoodscollect">
+    insert into goodscollect values (#{goodscollectId},#{goodsId},#{userId})
+</insert>
+</mapper>

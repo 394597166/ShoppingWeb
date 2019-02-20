@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebcoupon.dao.UsercouponMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+<insert id="insertUsercoupon">
+    insert into usercoupon values (#{userCouponId},#{couponId},#{userId},#{userCouponState})
+</insert>
+    <select id="selectAllUsercoupon" resultMap="usercoupon">
+        select * from usercoupon where userId = #{userId}
+    </select>
+    <select id="selectUsercouponAndState" resultMap="usercoupon">
+        select * from usercoupon where userId = #{userId} AND userCouponState = #{userCouponState}
+    </select>
+    <resultMap id="usercoupon" type="com.cheer.shoppingwebcoupon.model.Usercoupon">
+        <id property="userCouponId" column="userCouponId"></id>
+        <result property="userCouponState" column="userCouponState"></result>
+        <association property="coupon" column="couponId" javaType="com.cheer.shoppingwebcoupon.model.Coupon" fetchType="lazy" select="com.cheer.shoppingwebcoupon.dao.CouponMapper.selectCoupon"></association>
+    </resultMap>
+    <update id="updateUsercoupon">
+        update usercoupon set userCouponState = #{userCouponState} where userCouponId = #{userCouponId}
+    </update>
+</mapper>

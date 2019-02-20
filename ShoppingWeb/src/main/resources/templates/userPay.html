@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>支付界面</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+</head>
+
+<body style="position:relative;">
+
+<div class="top">
+    <div class="top-con w1200">
+        <p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+        <ul class="t-con-r f-r">
+            <li><a href="http://localhost:8080/user/personalCenter.html">我 (个人中心)</a></li>
+            <li><a href="http://localhost:8080/cart/cart.html">我的购物车</a></li>
+            <li><a href="http://localhost:8080/order/order.html">我的订单</a></li>
+            <li class="erweima">
+                <a href="#">扫描二维码</a>
+                <div class="ewm-tu">
+                    <a href="#"><img src="../static/images/erweima-tu.jpg" /></a>
+                </div>
+            </li>
+            <li><a href="http://localhost:8080/user/logout">退出</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<!--logo search 开始-->
+<div class="hd-info1 w1200">
+    <div class="logo f-l">
+        <h1><a href="http://localhost:8080/index.html" title="宅客微购"><img src="../static/images/logo.jpg" /></a></h1>
+    </div>
+    <div class="dianji f-r">
+        <div class="btn1">
+            <a href="http://localhost:8080/user/register.html"><button class="btn1-l">注册</button></a>
+            <a href="http://localhost:8080/user/login.html"><button class="btn1-r">登录</button></a>
+            <div style="clear:both;"></div>
+        </div>
+        <a href="http://localhost:8080/admin/adminlogin.html"><button class="btn2">商家入口    ></button></a>
+    </div>
+    <div class="search f-r">
+        <ul class="sp">
+            <li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="srh">
+            <div class="ipt f-l">
+                <input id="goodsName" type="text" placeholder="搜索商品..." ss-search-show="sp" />
+            </div>
+            <button id="selectGoods" class="f-r">搜 索</button>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+    
+    <!--内容开始-->
+    <div class="payment-interface w1200">
+    	<div class="pay-info">
+        	<div class="info-tit">
+            	<h3>订单号：<span id="userorderId"></span><span>(24小时内未支付成功，订单自动取消！)</span></h3>
+            </div>
+        </div>
+        <div class="pay-info">
+            <div class="info-tit">
+                <h3>支付金额：<span id="userorderPrice"></span></h3>
+            </div>
+        </div>
+    	<div class="pay-info">
+        	<div class="info-tit">
+            	<h3>输入密码</h3>
+            </div>
+            <div class="pay-mima">
+                <div class="mima-ipt">
+                	<p>请输入用户密码：</p>
+                    <input id="password" type="password" style="border-left:1px solid #E5E5E5;width: 200px" />
+                </div>
+                <button class="mima-btn">立即支付</button>
+            </div>
+        </div>
+    </div>
+    
+    <!--底部服务-->
+    <div class="ft-service">
+    	<div class="w1200">
+        	<div class="sv-con-l2 f-l">
+            	<dl>
+                	<dt><a href="#">新手上路</a></dt>
+                    <dd>
+                    	<a href="#">购物流程</a>
+                    	<a href="#">在线支付</a>
+                    </dd>
+                </dl>
+                <dl>
+                	<dt><a href="#">配送方式</a></dt>
+                    <dd>
+                    	<a href="#">货到付款区域</a>
+                    	<a href="#">配送费标准</a>
+                    </dd>
+                </dl>
+                <dl>
+                	<dt><a href="#">购物指南</a></dt>
+                    <dd>
+                    	<a href="#">常见问题</a>
+                    	<a href="#">订购流程</a>
+                    </dd>
+                </dl>
+                <dl>
+                	<dt><a href="#">售后服务</a></dt>
+                    <dd>
+                    	<a href="#">售后服务保障</a>
+                    	<a href="#">退款说明</a>
+                    	<a href="#">新手选购商品总则</a>
+                    </dd>
+                </dl>
+                <dl>
+                	<dt><a href="#">关于我们</a></dt>
+                    <dd>
+                    	<a href="#">投诉与建议</a>
+                    </dd>
+                </dl>
+                <div style="clear:both;"></div>
+            </div>
+        	<div class="sv-con-r2 f-r">
+            	<p class="sv-r-tle">187-8660-5539</p>
+            	<p>周一至周五9:00-17:30</p>
+            	<p>（仅收市话费）</p>
+            	<a href="#" class="zxkf">24小时在线客服</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+
+<!--底部服务-->
+<div class="ft-service">
+    <div class="w1200">
+        <div class="sv-con-l2 f-l">
+            <dl>
+                <dt><a>新手上路</a></dt>
+                <dd>
+                    <a href="http://localhost:8080/other/service.html">服务协议</a>
+                    <a href="http://localhost:8080/other/onlinePayment.html">在线支付</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a>配送方式</a></dt>
+                <dd>
+                    <a href="http://localhost:8080/other/distribution.html">配送费标准</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a>购物指南</a></dt>
+                <dd>
+                    <a href="http://localhost:8080/other/FAQ.html">购物常见问题</a>
+                    <a href="http://localhost:8080/other/shoppingProcess.html">购物流程</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a>售后服务</a></dt>
+                <dd>
+                    <a href="http://localhost:8080/other/exchanged.html">退换货政策总则</a>
+                    <a href="http://localhost:8080/other/exchanged2.html">自营商品退换货细则</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a>关于我们</a></dt>
+                <dd>
+                    <a href="http://localhost:8080/other/about.html">关于我们</a>
+                </dd>
+            </dl>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="sv-con-r2 f-r">
+            <p class="sv-r-tle">151-6264-6839</p>
+            <p>周一至周五9:00-16:00</p>
+            <p>（仅收市话费）</p>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=394597166&site=qq&menu=yes" target="_blank" class="zxkf">24小时在线客服</a>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<script src="../static/js/Md5.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //获得支付信息
+        $.ajax({
+            url: "http://localhost:8080/order/userPay",
+            method: "POST",
+            dataType: "json",
+            success: function (result) {
+                if (result.result){
+                    if (result.result2){
+                        $("#userorderId").text(result.userorder.userorderId);
+                        $("#userorderPrice").text(result.userorder.userorderPrice-result.userorder.couponSubtract);
+                    } else{
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/index.html"
+                    }
+                } else{
+                    alert(result.data);
+                    window.location.href = "http://localhost:8080/user/login.html"
+                }
+            }
+        });
+        //立即支付事件
+        var $btn = $(".mima-btn");
+        var $password = $("#password");
+        $btn.on("click",function () {
+            if ($password.val()===""){
+                alert("请输入密码！");
+                $password.focus();
+            } else{
+                var newPassword = $.md5($password.val());
+                //支付
+                $.ajax({
+                    url: "http://localhost:8080/order/Pay",
+                    method: "POST",
+                    data:{
+                        userPassword:newPassword,
+                        userorderId:$("#userorderId").text(),
+                        userorderPrice:$("#userorderPrice").text()
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.result){
+                            if (result.result2) {
+                                if (result.result3){
+                                    alert(result.data);
+                                    window.location.href = "http://localhost:8080/order/order.html";
+                                } else{
+                                    alert(result.data);
+                                    window.location.href = "http://localhost:8080/user/balance.html";
+                                }
+                            }else{
+                                alert(result.data);
+                                $password.focus();
+                            }
+                        } else {
+                            alert(result.data);
+                            window.location.href = "http://localhost:8080/user/login.html";
+                        }
+                    }
+                });
+            }
+        });
+        //搜索商品
+        var $goodsName = $("#goodsName");
+        var $selectGoods = $("#selectGoods");
+        $selectGoods.on("click",function () {
+            if ($goodsName.val()===""){
+                alert("请输入需要搜索的内容！");
+                $goodsName.focus();
+            }else{
+                $.ajax({
+                    url: "http://localhost:8080/goods/selectgoods",
+                    method: "POST",
+                    data:{
+                        goodsName:$goodsName.val()
+                    },
+                    dataType: "json",
+                    success: function () {
+                        window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

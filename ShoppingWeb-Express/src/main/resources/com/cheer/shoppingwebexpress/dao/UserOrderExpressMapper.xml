@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebexpress.dao.UserOrderExpressMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectUserOrderExpressOne" resultMap="userOrderExpress">
+        select * from userorderexpress where userorderId = #{userorderId}
+    </select>
+    <resultMap id="userOrderExpress" type="com.cheer.shoppingwebexpress.model.UserOrderExpress">
+        <id property="userorderexpressId" column="userorderexpressId"></id>
+        <result property="userorderexpressName" column="userorderexpressName"></result>
+        <association property="express" column="expressId" javaType="com.cheer.shoppingwebexpress.model.Express" fetchType="lazy" select="com.cheer.shoppingwebexpress.dao.ExpressMapper.selectExpressOne"></association>
+    </resultMap>
+    <insert id="insertUserOrderExpress">
+        insert into userorderexpress values (#{userorderexpressId},#{userorderexpressName},#{userorderId},#{expressId})
+    </insert>
+</mapper>

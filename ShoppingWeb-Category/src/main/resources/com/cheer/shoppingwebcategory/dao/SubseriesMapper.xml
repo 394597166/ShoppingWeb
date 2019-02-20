@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebcategory.dao.SubseriesMapper">
+<select id="SubseriesAll" resultType="com.cheer.shoppingwebcategory.model.Subseries">
+    select * from subseries where subclassificationId = #{subclassificationId}
+</select>
+    <select id="selectSubseries" resultType="com.cheer.shoppingwebcategory.model.Subseries">
+        select * from subseries where subseriesId = #{subseriesId}
+    </select>
+    <select id="selectSubseriesAndSubclassificationId" resultType="com.cheer.shoppingwebcategory.model.Subseries">
+        select * from subseries where subclassificationId = #{subclassificationId}
+    </select>
+</mapper>

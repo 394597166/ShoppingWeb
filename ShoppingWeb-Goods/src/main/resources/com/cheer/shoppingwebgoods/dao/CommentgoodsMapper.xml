@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebgoods.dao.CommentgoodsMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectCommentgoodsAndgoodsId" resultType="com.cheer.shoppingwebgoods.model.Commentgoods">
+        select * from commentgoods where goodsId = #{goodsId}
+    </select>
+</mapper>

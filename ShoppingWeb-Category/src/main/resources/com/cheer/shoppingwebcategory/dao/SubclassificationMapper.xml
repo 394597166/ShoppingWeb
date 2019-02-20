@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebcategory.dao.SubclassificationMapper">
+<select id="SubclassificationMapperAll" resultMap="subclassification">
+    select * from subclassification where categoryId = #{categoryId}
+</select>
+    <resultMap id="subclassification" type="com.cheer.shoppingwebcategory.model.Subclassification">
+        <id property="subclassificationId" column="subclassificationId"></id>
+        <result property="subclassificationName" column="subclassificationName"></result>
+        <collection property="subseriesList" column="subclassificationId" ofType="com.cheer.shoppingwebcategory.model.Subseries" fetchType="lazy" select="com.cheer.shoppingwebcategory.dao.SubseriesMapper.SubseriesAll"></collection>
+    </resultMap>
+    <select id="selectSubclassification" resultType="com.cheer.shoppingwebcategory.model.Subclassification">
+        select * from subclassification where subclassificationId = #{subclassificationId}
+    </select>
+    <select id="selectSubclassificationAndcategoryId" resultType="com.cheer.shoppingwebcategory.model.Subclassification">
+        select * from subclassification where categoryId = #{categoryId}
+    </select>
+</mapper>

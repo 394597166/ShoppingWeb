@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+</head>
+
+<body>
+
+	<div class="sign-logo w1200">
+        <h1 style="font-size: 5em;text-align: center">宅客微购商家后台系统</h1>
+</div>
+
+	<div class="sign-con w1200">
+	<img src="../static/images/logn-tu.gif" class="sign-contu f-l" />
+    <div class="sign-ipt f-l">
+        <div class="psw psw1">
+            <label class="myLabel">用户名:</label>
+            <input style="width: 70%" id="admin" type="text" placeholder="用户名" />
+        </div>
+        <br>
+        <div class="psw psw1">
+            <label class="myLabel">密&nbsp&nbsp&nbsp码:</label>
+            <input style="width: 70%;" id="password" type="password" placeholder="密码" /><br />
+        </div>
+        <br>
+        <div class="psw psw1">
+            <label class="myLabel">图形码：</label>
+                <input type = "button" id="code" style="border: 0;background-color: transparent;padding: 0;"/>
+            </label>
+        </div>
+
+        <input id="code_input" type="text" placeholder="图形码(区分大小写)" /><br />
+        <button id="adminLogin" class="slig-btn">登录</button>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+    <!--代码区-->
+    <script src="../static/js/Md5.js"></script>
+    <script type="text/javascript">
+       $(function () {
+           var $admin = $("#admin");
+           $admin.focus();
+           var $password = $("#password");
+           var $code_input = $("#code_input")
+           var $adminLogin = $("#adminLogin");
+           $adminLogin.on("click",function () {
+               if ($admin.val()==="" || $admin.val()===null){
+                   alert("请输入用户名！");
+                   $admin.focus();
+               } else if($password.val()==="" || $password.val()===null){
+                   alert("请输入密码！");
+                   $password.focus();
+               }else if($code_input.val()==="" || $code_input.val()===null){
+                   alert("请输入图形验证码");
+                   $code_input.focus();
+               }else if($code_input.val()!== code){
+                   alert("图形验证码输入错误！");
+                   createCode();
+                   $code_input.val("");
+                   $code_input.focus();
+               }else{
+                   var newPassword = $.md5($password.val());
+                   $.ajax({
+                       url: "http://localhost:8080/admin/adminLogin",
+                       method: "POST",
+                       data: {
+                           adminName:$admin.val(),
+                           adminPassword:newPassword
+                       },
+                       dataType: "json",
+                       success: function (result) {
+                           if (result.result){
+                               alert(result.data);
+                               window.location.href = "http://localhost:8080/admin/adminCoupon.html";
+                           }else{
+                               alert(result.data);
+                               window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                           }
+                       }
+                   });
+               }
+           });
+           // 图形验证码
+           var code; //在全局定义验证码
+           var $checkCode = $("#code");
+           //验证码单击事件
+           $checkCode.on("click",createCode);
+           //加载浏览器生成一个
+           createCode();
+           //检测用户名
+           //产生验证码
+           function createCode(){
+               code = "";
+               var codeLength = 4;//验证码的长度
+               var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',
+                   'S','T','U','V','W','X','Y','Z');//随机数
+               var i = 0;
+               while(i < codeLength){//循环操作
+                   var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）
+                   code = code+random[index];//根据索引取得随机数加到code上
+                   i++;
+               }
+               $checkCode.val(code);//把code值赋给验证码
+           }
+       })
+    </script>
+</body>
+</html>

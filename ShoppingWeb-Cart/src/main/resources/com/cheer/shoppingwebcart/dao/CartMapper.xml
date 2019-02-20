@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebcart.dao.CartMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectCartAll" resultMap="cart">
+        select * from cart where userId = #{userId}
+    </select>
+    <select id="selectCartOne" resultMap="cart">
+        select * from cart where userId = #{userId} And goodsId = #{goodsId} And inventoryId = #{inventoryId}
+    </select>
+    <resultMap id="cart" type="com.cheer.shoppingwebcart.model.Cart">
+        <id property="cartId" column="cartId"></id>
+        <result property="cartCount" column="cartCount"></result>
+        <association property="goods" column="goodsId" javaType="com.cheer.shoppingwebgoods.model.Goods" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.GoodsMapper.selectGoodsAndgoodsId"></association>
+        <association property="inventory" column="inventoryId" javaType="com.cheer.shoppingwebgoods.model.Inventory" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.InventoryMapper.selectInventoryAndinventoryId"></association>
+    </resultMap>
+    <delete id="deleteCart">
+        delete from cart where cartId = #{cartId}
+    </delete>
+    <update id="updateCartCount">
+        update cart set cartCount = #{cartCount} where cartId = #{cartId}
+    </update>
+    <insert id="insertCart">
+        insert into cart values (#{cartId},#{cartCount},#{goodsId},#{inventoryId},#{userId})
+    </insert>
+</mapper>

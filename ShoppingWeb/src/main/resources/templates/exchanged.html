@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>exchanged</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/zhongling2.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+</head>
+
+<body style="position:relative;">
+
+<!--top 开始-->
+<div class="top">
+    <div class="top-con w1200">
+        <p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+        <ul class="t-con-r f-r">
+            <li><a href="http://localhost:8080/user/personalCenter.html">我 (个人中心)</a></li>
+            <li><a href="http://localhost:8080/cart/cart.html">我的购物车</a></li>
+            <li><a href="http://localhost:8080/order/order.html">我的订单</a></li>
+            <li class="erweima">
+                <a href="#">扫描二维码</a>
+                <div class="ewm-tu">
+                    <a href="#"><img src="../static/images/erweima-tu.jpg" /></a>
+                </div>
+            </li>
+            <li><a href="http://localhost:8080/user/logout">退出</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<!--logo search 开始-->
+<div class="hd-info1 w1200">
+    <div class="logo f-l">
+        <h1><a href="http://localhost:8080/index.html" title="宅客微购"><img src="../static/images/logo.jpg" /></a></h1>
+    </div>
+    <div class="dianji f-r">
+        <div class="btn1">
+            <a href="http://localhost:8080/user/register.html"><button class="btn1-l">注册</button></a>
+            <a href="http://localhost:8080/user/login.html"><button class="btn1-r">登录</button></a>
+            <div style="clear:both;"></div>
+        </div>
+        <a href="http://localhost:8080/admin/adminlogin.html"><button class="btn2">商家入口    ></button></a>
+    </div>
+    <div class="search f-r">
+        <ul class="sp">
+            <li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div class="srh">
+            <div class="ipt f-l">
+                <input id="goodsName" type="text" placeholder="搜索商品..." ss-search-show="sp" />
+            </div>
+            <button id="selectGoods" class="f-r">搜 索</button>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+    
+    <!--nav 开始-->
+    <div style="border-bottom:2px solid #F09E0B;">
+    	<div class="nav w1200">
+    	<a href="JavaScript:;" class="sp-kj" kj="">
+        	商品分类快捷
+        </a>
+            <div id="category" class="kj-show2 none" kj-sh="">
+
+            </div>
+            <ul id="category_li">
+
+            </ul>
+        <div style="clear:both;"></div>
+    </div>
+    </div>
+    
+    <!--内容开始-->
+    <div class="cehua w1200">
+    	<h2>退换货政策总则</h2>
+        <div class="ch-kuai1">
+        	<h3>一、 无理由退货政策</h3>
+            <p class="ch-p1">1. 宅客宝承诺，对于您（作为消费者）通过宅客宝网站购买的商品，若商品能够保持出售时原状且配件、赠品（如有）齐全的，则自商品收货之日起，可享受“3天无理由退货”政策，您可在线进行申请退货；并需自行将商品寄回且承担相关运费；<span>但根据法律规定及商品性质，如下商品不享受“3天无理由退货”</span>政策：</p>
+            <p class="ch-p2">（1）消费者定作商品；</p>
+            <p class="ch-p2">（2）鲜活易腐商品，例如鲜花、绿植、果蔬、低温乳品、速冻食品等；</p>
+            <p class="ch-p2">（3）在线下载或消费者拆封的音像制品、计算机软件等数字化商品；</p>
+            <p class="ch-p2">（4）交付的报纸、期刊类商品；</p>
+            <p class="ch-p2">（5）食用类商品，例如食品、保健品、饮料、药品、酒类、奶粉、婴儿辅食等；</p>
+            <p class="ch-p2">（6）贵重类商品，例如钻石、贵金属、手表、珠宝、奢侈品等；</p>
+            <p class="ch-p2">（7）个人护理、贴身类商品，例如计生用品、美护、内衣、贴身袜裤等；；</p>
+            <p class="ch-p2">（8）虚拟类商品，例如礼品卡、手机充值、游戏点卡等充值类商品，以及门票、机票、旅游套餐等一次性消费服务类商品等；</p>
+            <p class="ch-p2">（9）特殊类商品，例如运营商合约手机以及二手品、处理品等；</p>
+            <p class="ch-p2">（10）其他根据商品性质不宜退货的商品。</p>
+            <p class="ch-p1">2. “3天无理由退货”政策，目前仅支持退货，不支持换货。</p>
+            <p class="ch-p1">3. 对于上述“3天无理由退货”政策的适用，如商家与您另有约定的，则优先适用该约定，但该约定与 法律规定相冲突及低于“宅客宝退换货政策”标准的除外。
+☺具体无理由退货标准详见<span>《宅客宝自营商品退货细则》</span>。</p>
+        </div>
+        <div class="ch-kuai1">
+        	<h3>二、 有理由退换货政策</h3>
+            <p class="ch-p1">1. 宅客宝承诺，如您通过宅客宝网站购买的商品出现国家法律所规定的功能性故障或商品质量问题，则自您所购商品收货之日起，3天内可以退货，5天内可以换货，如涉及保修则在保修期内可以保修，您可在线进行申请退换货，运费由该商品所售商家承担。</p>
+            <div class="ch-box">
+            	<ul class="ch-ul1">
+                	<li class="li1">售后问题类型</li>
+                	<li class="li2">需提供的凭证</li>
+                	<li class="li3">问题经确认，可获得凭证</li>
+                    <div style="clear:both;"></div>
+                </ul>
+            	<ul class="ch-ul2">
+                	<li class="li1">品质问题</li>
+                	<li class="li4">
+                    	<p class="ul2-p1">性能故障</p>
+                    	<p class="ul2-p2">商品质量</p>
+                    </li>
+                	<li class="li2">
+                    	<p class="ul2-p1">经由生产厂家指定或特约售后服务中心检测确认并出具的检测报告故障单</p>
+                    	<p class="ul2-p2">详细描述您收到的商品情况，如您提供的相关商品问题图片，将会使处理加速哦</p>
+                    </li>
+                	<li class="li3">
+                    	<p class="ul2-p1">7天退货/15换货/保修期内保修</p>
+                    	<p class="ul2-p2">7天退货/15换货</p>
+                    </li>
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+            <p class="ch-p1">具体无理由退货标准详见<span>《宅客宝自营商品退货细则》</span>。</p>
+            <p class="ch-p1">2. 如您所购商品在收货之日起7天内出现非质量问题，例如图物差异、商品破损等，则您可在线进行退换货申请，根据实际问题情况，会对您提交的退换货申请进行审核，并将于1个工作日内向您反馈审核通过与否的结果。</p>
+        </div>
+    </div>
+
+    <!--底部服务-->
+    <div class="ft-service">
+        <div class="w1200">
+            <div class="sv-con-l2 f-l">
+                <dl>
+                    <dt><a>新手上路</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/service.html">服务协议</a>
+                        <a href="http://localhost:8080/other/onlinePayment.html">在线支付</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>配送方式</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/distribution.html">配送费标准</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>购物指南</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/FAQ.html">购物常见问题</a>
+                        <a href="http://localhost:8080/other/shoppingProcess.html">购物流程</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>售后服务</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/exchanged.html">退换货政策总则</a>
+                        <a href="http://localhost:8080/other/exchanged2.html">自营商品退换货细则</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a>关于我们</a></dt>
+                    <dd>
+                        <a href="http://localhost:8080/other/about.html">关于我们</a>
+                    </dd>
+                </dl>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="sv-con-r2 f-r">
+                <p class="sv-r-tle">151-6264-6839</p>
+                <p>周一至周五9:00-16:00</p>
+                <p>（仅收市话费）</p>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=394597166&site=qq&menu=yes" target="_blank" class="zxkf">24小时在线客服</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(function () {
+        //搜索商品
+        var $goodsName = $("#goodsName");
+        var $selectGoods = $("#selectGoods");
+        $selectGoods.on("click",function () {
+            if ($goodsName.val()===""){
+                alert("请输入需要搜索的内容！");
+                $goodsName.focus();
+            }else{
+                $.ajax({
+                    url: "http://localhost:8080/goods/selectgoods",
+                    method: "POST",
+                    data:{
+                        goodsName:$goodsName.val()
+                    },
+                    dataType: "json",
+                    success: function () {
+                        window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                    }
+                });
+            }
+        });
+        // 商品分类快捷
+        $.ajax({
+            url: "http://localhost:8080/category",
+            method: "POST",
+            dataType: "json",
+            success: function (result) {
+                //商品分类标签
+                var $category = $("#category");
+                var $category_li = $("#category_li");
+                //循环遍历result
+                $.each(result,function (index, value) {
+                    //分类盒子
+                    var $div_1 = $("<div></div>");
+                    $div_1.addClass("kj-info1");
+                    //分类标题
+                    var $dl_1 = $("<dl></dl>");
+                    $dl_1.addClass("kj-dl1");
+                    //标题
+                    var $dt_1 = $("<dt><a href='#'>"+value.categoryName+"</a></dt>");
+                    $dt_1.on("click",function () {
+                        $.ajax({
+                            url: "http://localhost:8080/goods/selectgoodsAndCategoryId",
+                            method: "POST",
+                            data:{
+                                categoryId:value.categoryId
+                            },
+                            dataType: "json",
+                            success: function () {
+                                window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                            }
+                        });
+                    });
+                    var $li = $("<li><a href='#'>"+value.categoryName+"</a></li>");
+                    $li.on("click",function () {
+                        $.ajax({
+                            url: "http://localhost:8080/goods/selectgoodsAndCategoryId",
+                            method: "POST",
+                            data:{
+                                categoryId:value.categoryId
+                            },
+                            dataType: "json",
+                            success: function () {
+                                window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                            }
+                        });
+                    });
+                    var text = "";
+                    var i = 0;
+                    $.each(value.subclassificationList,function (index2,value2) {
+                        i++;
+                        if(i%3==0){
+                            text = text + value2.subclassificationName+"<br/>";
+                        }else{
+                            text = text + value2.subclassificationName+"/";
+                        }
+                    });
+                    //内容
+                    var $dd_1 = $("<dd>"+text+"</dd>");
+                    $dl_1.append($dt_1,$dd_1);
+                    $div_1.append($dl_1);
+                    //子分类
+                    var $div_2 = $("<div></div>");
+                    $div_2.addClass("kj-if-show");
+                    $.each(value.subclassificationList,function (index3,value3) {
+                        var $dl_2 = $("<dl></dl>");
+                        var $dt_2 = $("<dt><a href='#'>"+value3.subclassificationName+"</a></dt>");
+                        $dt_2.on("click",function () {
+                            $.ajax({
+                                url: "http://localhost:8080/goods/selectgoodsAndSubclassificationId",
+                                method: "POST",
+                                data:{
+                                    subclassificationId:value3.subclassificationId
+                                },
+                                dataType: "json",
+                                success: function () {
+                                    window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                                }
+                            });
+                        });
+                        var $dd_2 = $("<dd></dd>");
+                        //次分类
+                        $.each(value3.subseriesList,function (index4,value4) {
+                            var $a = $("<a href='#'>"+value4.subseriesName+"</a>");
+                            $a.on("click",function () {
+                                $.ajax({
+                                    url: "http://localhost:8080/goods/selectgoodsAndSubseriesId",
+                                    method: "POST",
+                                    data:{
+                                        subseriesId:value4.subseriesId
+                                    },
+                                    dataType: "json",
+                                    success: function () {
+                                        window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                                    }
+                                });
+                            });
+                            $dd_2.append($a);
+                        });
+                        var $div_3 = $("<div style='clear: both'></div>");
+                        $dl_2.append($dt_2,$dd_2,$div_3);
+                        $div_2.append($dl_2);
+                    });
+                    $div_1.append($div_2);
+                    //鼠标移入事件
+                    $div_1.on("mouseover",function () {
+                        $div_1.removeClass();
+                        $div_1.addClass("kj-info1 hover-show-bg");
+                        $div_2.css("display","block");
+                    });
+                    //鼠标移出事件
+                    $div_1.on("mouseout",function () {
+                        $div_1.removeClass();
+                        $div_1.addClass("kj-info1");
+                        $div_2.css("display","none");
+                    });
+                    $category.append($div_1);
+                    $category_li.append($li);
+                });
+                var $div_4 = $("<div style='clear: both'></div>")
+                $category_li.append($div_4);
+            }
+        });
+    })
+</script>
+</body>
+</html>

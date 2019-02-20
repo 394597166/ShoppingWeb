@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingweborder.dao.UserorderMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <insert id="insertUserorder">
+        insert into userorder values (#{userorderId},#{addressAlias},#{addressName},#{addressDistrict},#{addressDetailed},#{addressPhone},#{userorderCount},#{userorderPrice},#{userorderState},#{userorderTime},#{userCouponId},null,#{couponSubtract},#{userId})
+    </insert>
+    <update id="insertUserorderpayTime">
+        update userorder set payTime = #{payTime} where userorderId = #{userorderId}
+    </update>
+    <update id="insertUserordercouponId">
+        update userorder set userCouponId = #{userCouponId} where userorderId = #{userorderId}
+    </update>
+    <update id="clearUserCoupon">
+        update userorder set userCouponId = null,couponSubtract = 0 where userorderId = #{userorderId}
+    </update>
+    <update id="updateUserorder">
+        update userorder set userorderState = #{userorderState} where userorderId = #{userorderId}
+    </update>
+    <select id="selectUserorderAndIdAndState" resultMap="userorder">
+        select * from userorder where userId = #{userId} AND userorderState = #{userorderState} order by userorderTime Desc
+    </select>
+    <select id="selectUserorderAndId" resultMap="userorder">
+        select * from userorder where userId = #{userId} order by userorderTime Desc
+    </select>
+    <select id="selectUserorderAnduserorderId" resultMap="userorder">
+        select * from userorder where userorderId = #{userorderId}
+    </select>
+    <select id="selectAllUserorderAndState" resultMap="userorder">
+        select * from userorder
+        <trim prefix="where">
+        <if test="userorderState != null">
+            userorderState = #{userorderState}
+        </if>
+        </trim>
+        order by userorderTime Desc
+    </select>
+    <resultMap id="userorder" type="com.cheer.shoppingweborder.model.Userorder">
+        <id property="userorderId" column="userorderId"></id>
+        <result property="addressAlias" column="addressAlias"></result>
+        <result property="addressName" column="addressName"></result>
+        <result property="addressDistrict" column="addressDistrict"></result>
+        <result property="addressDetailed" column="addressDetailed"></result>
+        <result property="addressPhone" column="addressPhone"></result>
+        <result property="userorderCount" column="userorderCount"></result>
+        <result property="userorderPrice" column="userorderPrice"></result>
+        <result property="userorderState" column="userorderState"></result>
+        <result property="userorderTime" column="userorderTime"></result>
+        <result property="payTime" column="payTime"></result>
+        <result property="userCouponId" column="userCouponId"></result>
+        <result property="couponSubtract" column="couponSubtract"></result>
+        <association property="userOrderExpress" column="userorderId" javaType="com.cheer.shoppingwebexpress.model.UserOrderExpress" fetchType="lazy" select="com.cheer.shoppingwebexpress.dao.UserOrderExpressMapper.selectUserOrderExpressOne"></association>
+        <collection property="userorderitemList" column="userorderId" ofType="com.cheer.shoppingweborder.model.Userorderitem" fetchType="lazy" select="com.cheer.shoppingweborder.dao.UserorderitemMapper.selectUserorderitemAnduserorderId"></collection>
+    </resultMap>
+</mapper>

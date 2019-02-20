@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebgoods.dao.PictureMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectPictureAndgoodsId" resultMap="picture">
+        select * from picture where goodsId = #{goodsId}
+    </select>
+    <resultMap id="picture" type="com.cheer.shoppingwebgoods.model.Picture">
+        <id property="pictureId" column="pictureId"></id>
+        <result property="picturePic" column="picturePic"></result>
+        <association property="bigpicture" column="pictureId" javaType="com.cheer.shoppingwebgoods.model.Bigpicture" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.BigpictureMapper.selectBigPictureAndPictureId"></association>
+    </resultMap>
+</mapper>

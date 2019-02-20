@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebadmin.dao.AdminMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+
+    <select id="checkAdmin" resultType="com.cheer.shoppingwebadmin.model.Admin">
+        select * from admin
+       <trim prefix="where" prefixOverrides="AND">
+           <if test="adminName != null">
+               adminName = #{adminName}
+           </if>
+           <if test="adminPassword != null">
+               AND adminPassword = #{adminPassword}
+           </if>
+       </trim>
+    </select>
+</mapper>

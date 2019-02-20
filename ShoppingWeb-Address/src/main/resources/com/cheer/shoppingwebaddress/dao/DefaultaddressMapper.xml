@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebaddress.dao.DefaultaddressMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="Default" resultType="com.cheer.shoppingwebaddress.model.Defaultaddress">
+        select * from defaultaddress where addressId = #{addressId}
+    </select>
+    <insert id="insert">
+        insert into defaultaddress values(#{defaultaddressId},#{addressId})
+    </insert>
+    <update id="updateDefault">
+        update defaultaddress set addressId = #{addressId} where defaultaddressId = #{defaultaddressId}
+    </update>
+</mapper>

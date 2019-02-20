@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"  content="width=device-width, initial-scale=1, shrink-to-fit=no,text/html; charset=utf-8"/>
+<title>商品管理</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/jquery.my-modal.1.1.winStyle.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+</head>
+
+<body>
+<!--nav 开始-->
+<div class="sign-logo w1200">
+	<h1 style="font-size: 5em;text-align: center">宅客微购商家后台系统</h1>
+	<a href="http://localhost:8080/admin/adminLogout" style="float: right">退出后台系统</a>
+</div>
+    
+    <!--内容开始-->
+    <div class="personal w1200">
+		<div class="personal-left f-l">
+			<div class="personal-l-tit">
+				<h3>管理员后台</h3>
+			</div>
+			<ul>
+				<li class="per-li1"><a href="http://localhost:8080/admin/adminCoupon.html">优惠卷管理<span>></span></a></li>
+				<li class="per-li2"><a href="http://localhost:8080/admin/adminGoods.html">商品管理<span>></span></a></li>
+				<li class="per-li3"><a href="http://localhost:8080/admin/adminOrder.html">订单管理<span>></span></a></li>
+			</ul>
+		</div>
+    	<div class="management f-r">
+            <div class="tanchuang-con">
+                <div class="tc-title">
+                    <h3>商品管理</h3>
+                </div>
+				<div class="data-con">
+					<div class="dt1" style="padding-left: 100px">
+						<input id="goodsName" type="text" style="margin-top: 30px"  placeholder="搜索商品...">
+					</div>
+					<button id="selectGoods" class="btn-pst">搜索</button>
+					<div style="clear:both;"></div>
+					<button id="insertGoods" class="btn-pst">新增商品</button>
+					<div style="clear:both;"></div>
+					<button id="up" class="btn-pst">已上架商品</button>
+					<button id="down" class="btn-pst">已下架商品</button>
+					<div style="clear:both;"></div>
+				</div>
+            </div>
+            <div class="man-info">
+            	<p id="address_length"></p>
+                <div class="man-if-con">
+                	<div class="man-tit">
+						<p class="p1">商品编号</p>
+                        <p class="p2" style="width: 750px;margin-left: 40px">商品名</p>
+                        <p class="p7">操作</p>
+                    </div>
+                    <ul id="goods_ul" class="man-ul1">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+<!--模拟框-->
+<div class="m-modal">
+	<div class="m-modal-dialog">
+		<div class="m-top">
+			<h4 class="m-modal-title">
+				新增商品
+			</h4>
+			<span class="m-modal-close">&times;</span>
+		</div>
+		<div class="m-middle">
+			<!--content-->
+			<ul>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span  style="float: left;">商品名： &nbsp&nbsp&nbsp</span>
+						<input id="Name" style="width: 460px;float: right" type="text">
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品规格：</span>
+						<textarea id="Specification" style="width: 460px;float: right"></textarea>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品描述：</span>
+						<input id="Describe" style="width: 460px;float: right" type="text">
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品单价：</span>
+						<input id="Price" style="width: 460px;float: right" type="text">
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品会员单价：</span>
+							<input id="VipPrice" style="width: 460px;float: right" type="text">
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品分类：</span>
+						<select id="category" style="width: 460px;float: right">
+
+						</select>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品子分类：</span>
+						<select id="subclassification" style="width: 460px;float: right">
+						</select>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品次分类：</span>
+						<select id="subseries" style="width: 460px;float: right">
+						</select>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li>
+					<div style="width: 560px;height: 30px;padding-top: 10px">
+						<span style="float: left;">商品标签：</span>
+						<div style="float: right">
+							<input id="inventoryName"  class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+							<input class="inventoryName" type="text" style="width: 60px;margin-left: 2px">
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="m-bottom">
+			<button class="m-btn-cancel">取消</button>
+			<button id="insert" class="m-btn-sure">确定</button>
+		</div>
+	</div>
+</div>
+<script src="../static/js/jquery.my-modal.1.1.js"></script>
+<script type="text/javascript">
+	$(function () {
+        var $goods_ul = $("#goods_ul");
+        goodsInfo("http://localhost:8080/admin/selectAllGoods",null);
+        var $up = $("#up");
+        var $down = $("#down");
+        var $selectGoods = $("#selectGoods");
+        var $goodsName = $("#goodsName");
+        var $insertGoods = $("#insertGoods");
+        $up.on("click",function () {
+            goodsInfo("http://localhost:8080/admin/selectAllGoods","上架");
+        });
+        $down.on("click",function () {
+            goodsInfo("http://localhost:8080/admin/selectAllGoods","下架");
+        });
+        $selectGoods.on("click",function () {
+            if ($goodsName.val()===""){
+                alert("搜索内容为空！");
+                $goodsName.focus();
+			}else{
+                goodsInfo("http://localhost:8080/admin/selectAllGoodsLikeName",$goodsName.val());
+            }
+        });
+        var m1 = new MyModal.modal(function () {
+        });
+        $insertGoods.on("click", function() {
+            m1.show();
+        });
+        //获得所有的商品数据
+		function goodsInfo(url,data) {
+            $goods_ul.empty();
+            $.ajax({
+                url: url,
+                method: "POST",
+				data:{
+                    goodsState:data
+				},
+                dataType: "json",
+                success: function (result) {
+                    //判定是否登录
+                    if (result.result) {
+                        //遍历商品
+                        $.each(result.goodsList,function (index,value) {
+                            var $li = $("<li></li>");
+                            var $p1 = $("<p class='p1'>"+value.goodsId+"</p>");
+                            var $p2 = $("<p class='p2'style=\"width: 750px;margin-left: 40px\">"+value.goodsName+"</p>");
+                            var $p7 = $("<p class='p7' style='margin-left: -20px'></p>");
+                            if (value.goodsState==="上架") {
+                                var $p7_a1 = $("<a href='#'>下架</a>");
+                                $p7_a1.on("click",function () {
+                                    if (confirm("确定下架吗？")){
+                                        $.ajax({
+                                            url: "http://localhost:8080/admin/updateGoodsState",
+                                            method: "POST",
+                                            data: {
+                                                goodsId:value.goodsId,
+                                                goodsState:"下架"
+                                            },
+                                            dataType: "json",
+                                            success: function (result) {
+                                                if (result){
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/admin/adminGoods.html";
+                                                } else{
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            }else{
+                                var $p7_a1 = $("<a href='#'>上架</a>");
+                                $p7_a1.on("click",function () {
+                                    if (confirm("确定上架吗？")){
+                                        $.ajax({
+                                            url: "http://localhost:8080/admin/updateGoodsState",
+                                            method: "POST",
+                                            data: {
+                                                goodsId:value.goodsId,
+                                                goodsState:"上架"
+                                            },
+                                            dataType: "json",
+                                            success: function (result) {
+                                                if (result){
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/admin/adminGoods.html";
+                                                } else{
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                            var $div = $("<div style='clear: both'></div>");
+                            $p7.append($p7_a1);
+                            $li.append($p1,$p2,$p7,$div);
+                            $goods_ul.append($li);
+                        })
+                    }else{
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                    }
+                }
+            });
+        }
+        var $category = $("#category");
+        //获得商品分类数据
+        $.ajax({
+            url: "http://localhost:8080/admin/selectALLcategory",
+            method: "POST",
+            dataType: "json",
+            success: function (result) {
+                if (result){
+                    $.each(result.categoryList,function (index,value) {
+                        var $option = $("<option>"+value.categoryName+"</option>");
+                        $option.attr("value",value.categoryId);
+                        $category.append($option);
+                    });
+                } else{
+                    alert(result.data);
+                    window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                }
+            }
+        });
+        var $subclassification = $("#subclassification");
+        //获得子类数据
+        $category.on("click",function () {
+            // 变更分类时清空次分类和子分类
+            $subclassification.empty();
+            $subseries.empty();
+            $.ajax({
+                url: "http://localhost:8080/admin/selectSubclassificationAndCategoryId",
+                method: "POST",
+				data:{
+                    categoryId:$category.val()
+				},
+                dataType: "json",
+                success: function (result) {
+                    if (result){
+                        $.each(result.subclassificationList,function (index,value) {
+                            var $option = $("<option>"+value.subclassificationName+"</option>");
+                            $option.attr("value",value.subclassificationId);
+                            $subclassification.append($option);
+                        });
+                    } else{
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                    }
+                }
+            });
+        });
+		var $subseries = $("#subseries");
+		//获得次类数据
+        $subclassification.on("click",function () {
+            $subseries.empty();
+            $.ajax({
+                url: "http://localhost:8080/admin/selectSubseriesAndSubclassificationId",
+                method: "POST",
+                data:{
+                    subclassificationId:$subclassification.val()
+                },
+                dataType: "json",
+                success: function (result) {
+                    if (result){
+                        $.each(result.subseriesList,function (index,value) {
+                            var $option = $("<option>"+value.subseriesName+"</option>");
+                            $option.attr("value",value.subseriesId);
+                            $subseries.append($option);
+                        });
+                    } else{
+                        alert(result.data);
+                        window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                    }
+                }
+            });
+        });
+        //添加商品
+        var $insert = $("#insert");
+        $insert.on("click",function () {
+            var $Name = $("#Name");
+            var $Specification = $("#Specification");
+            var $Describe = $("#Describe");
+            var $Price = $("#Price");
+            var $VipPrice = $("#VipPrice");
+            var $category = $("#category");
+            var $subclassification = $("#subclassification");
+            var $subseries = $("#subseries");
+            var $inventoryName = $("#inventoryName");
+            var moneyReg = /(^[0-9]{1,6}$)|(^[0-9]{1,6}[\.]{1}[0-9]{1,2}$)/;
+            if ($Name.val()==="") {
+                alert("商品名不能为空！");
+            }else if ($Specification.val()==="") {
+                alert("商品规格不能为空！");
+			}else if($Describe.val()===""){
+                alert("商品描述不能为空！");
+			}else if($Price.val()===""){
+                alert("商品单价不能为空！")
+			}else if (!moneyReg.test($Price.val())){
+                alert("请输入正确的充值金额！最小0.01最大999999！");
+            }else if($VipPrice.val()===""){
+                alert("会员单价不能为空！")
+            }else if (!moneyReg.test($VipPrice.val())){
+                alert("请输入正确的充值金额！最小0.01最大999999！");
+            }else if ($category.val()==="" || $category.val()===null){
+                alert("分类未选择！");
+            }else if ($subclassification.val()==="" || $subclassification.val()===null){
+                alert("子类未选择！");
+            }else if ($subseries.val()==="" || $subseries.val()===null){
+                alert("次类未选择！");
+            }else if($inventoryName.val()===""){
+                alert("标签不能为空！");
+			}else{
+                var $inventoryNameAll = $(".inventoryName");
+                var inventoryName ;
+                $.each($inventoryNameAll,function (index,value) {
+                    if ($(this).val()!==""){
+                        if (index===0){
+                            inventoryName = $(this).val() + ",";
+						} else{
+                            inventoryName = inventoryName + $(this).val() + ",";
+                        }
+                    }
+                });
+                $.ajax({
+                    url: "http://localhost:8080/admin/insertGoods",
+                    method: "POST",
+                    data:{
+                        goodsName:$Name.val(),
+                        goodsSpecification:$Specification.val(),
+                        goodsDescribe:$Describe.val(),
+                        goodsPrice:$Price.val(),
+                        goodsVipPrice:$VipPrice.val(),
+                        categoryId:$category.val(),
+                        subclassificationId:$subclassification.val(),
+                        subseriesId:$subseries.val(),
+                        inventoryName:inventoryName
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.result){
+                            alert(result.data);
+                            window.location.href = "http://localhost:8080/admin/adminGoods.html";
+                        } else{
+                            alert(result.data);
+                            window.location.href = "http://localhost:8080/admin/adminlogin.html";
+                        }
+                    }
+                });
+			}
+        })
+
+    })
+</script>
+</body>
+
+</html>

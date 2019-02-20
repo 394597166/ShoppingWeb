@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebuser.dao.UserMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <insert id="insertUser">
+        insert into user values (#{userId},#{userName},#{userPassword},#{userSex},#{userAge},#{userEmail},#{userState},#{userVip})
+    </insert>
+    <update id="updateUser">
+        update user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userPassword != null">
+                userPassword = #{userPassword},
+            </if>
+            <if test="userEmail != null">
+                userEmail = #{userEmail},
+            </if>
+            <if test="userSex != null">
+                userSex = #{userSex},
+            </if>
+            <if test="userAge != null">
+                userAge = #{userAge}
+            </if>
+        </trim>
+       where userId = #{userId}
+    </update>
+    <select id="checkUser" resultType="com.cheer.shoppingwebuser.model.User">
+        select * from user
+       <trim prefix="where" prefixOverrides="AND">
+           <if test="userName != null">
+               userName = #{userName}
+           </if>
+           <if test="userEmail != null">
+               AND userEmail = #{userEmail}
+           </if>
+           <if test="userPassword != null">
+               AND userPassword = #{userPassword}
+           </if>
+       </trim>
+    </select>
+    <update id="updateUserVip">
+        update user set userVip = #{userVip} where userId = #{userId}
+    </update>
+</mapper>

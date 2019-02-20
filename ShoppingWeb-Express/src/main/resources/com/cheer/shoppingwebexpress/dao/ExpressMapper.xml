@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebexpress.dao.ExpressMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectExpressOne" resultType="com.cheer.shoppingwebexpress.model.Express">
+        select * from express where expressId = #{expressId}
+    </select>
+    <select id="selectExpressAll" resultType="com.cheer.shoppingwebexpress.model.Express">
+        select * from express
+    </select>
+</mapper>

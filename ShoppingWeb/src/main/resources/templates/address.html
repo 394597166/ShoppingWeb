@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"  content="width=device-width, initial-scale=1, shrink-to-fit=no,text/html; charset=utf-8"/>
+<title>address</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/shopping-mall-index.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/zhonglin.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+</head>
+
+<body>
+<!--top 开始-->
+<div class="top">
+	<div class="top-con w1200">
+		<p class="t-con-l f-l">您好，欢迎来到宅客微购</p>
+		<ul class="t-con-r f-r">
+			<li><a href="http://localhost:8080/user/personalCenter.html">我 (个人中心)</a></li>
+			<li><a href="http://localhost:8080/cart/cart.html">我的购物车</a></li>
+			<li><a href="http://localhost:8080/order/order.html">我的订单</a></li>
+			<li class="erweima">
+				<a href="#">扫描二维码</a>
+				<div class="ewm-tu">
+					<a href="#"><img src="../static/images/erweima-tu.jpg" /></a>
+				</div>
+			</li>
+			<li><a href="http://localhost:8080/user/logout">退出</a></li>
+			<div style="clear:both;"></div>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+<!--logo search 开始-->
+<div class="hd-info1 w1200">
+	<div class="logo f-l">
+		<h1><a href="http://localhost:8080/index.html" title="宅客微购"><img src="../static/images/logo.jpg" /></a></h1>
+	</div>
+	<div class="dianji f-r">
+		<div class="btn1">
+			<a href="http://localhost:8080/user/register.html"><button class="btn1-l">注册</button></a>
+			<a href="http://localhost:8080/user/login.html"><button class="btn1-r">登录</button></a>
+			<div style="clear:both;"></div>
+		</div>
+		<a href="http://localhost:8080/admin/adminlogin.html"><button class="btn2">商家入口    ></button></a>
+	</div>
+	<div class="search f-r">
+		<ul class="sp">
+			<li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+			<div style="clear:both;"></div>
+		</ul>
+		<div class="srh">
+			<div class="ipt f-l">
+				<input id="goodsName" type="text" placeholder="搜索商品..." ss-search-show="sp" />
+			</div>
+			<button id="selectGoods" class="f-r">搜 索</button>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+    <!--nav 开始-->
+    <div style="border-bottom:2px solid #F09E0B;">
+    	<div class="nav w1200">
+    	<a href="JavaScript:;" class="sp-kj" kj="">
+        	商品分类快捷
+        </a>
+			<div id="category" class="kj-show2 none" kj-sh="">
+
+			</div>
+			<ul id="category_li">
+
+			</ul>
+        <div style="clear:both;"></div>
+    </div>
+    </div>
+    
+    <!--内容开始-->
+    <div class="personal w1200">
+    	<div class="personal-left f-l">
+        	<div class="personal-l-tit">
+            	<h3>个人中心</h3>
+            </div>
+            <ul>
+				<li class="per-li2"><a href="http://localhost:8080/user/personalCenter.html">个人资料<span>></span></a></li>
+				<li class="per-li1"><a href="http://localhost:8080/user/updateMail.html">邮箱设置<span>></span></a></li>
+				<li class="per-li8"><a href="http://localhost:8080/user/updatePassword.html">密码设置<span>></span></a></li>
+				<li class="per-li3"><a href="http://localhost:8080/order/order.html">我的订单<span>></span></a></li>
+				<li class="per-li4"><a href="http://localhost:8080/user/balance.html">余额<span>></span></a></li>
+				<li class="per-li5"><a href="http://localhost:8080/cart/cart.html">购物车<span>></span></a></li>
+				<li class="per-li6"><a href="http://localhost:8080/user/address.html">管理收货地址<span>></span></a></li>
+				<li class="per-li9"><a href="http://localhost:8080/user/userCoupon.html">优惠券<span>></span></a></li>
+				<li class="per-li7"><a href="http://localhost:8080/user/usergoodscollect.html">商品收藏<span>></span></a></li>
+            </ul>
+        </div>
+    	<div class="management f-r">
+            <div class="tanchuang-con">
+                <div class="tc-title">
+                    <h3>我的收货地址</h3>
+                </div>
+                <font class="xinxi">请认真填写以下信息！</font>
+                <ul class="tc-con2">
+					<li class="tc-li1">
+						<p class="l-p">别名<span></span></p>
+						<input id="addressAlias" type="text" placeholder="比如：家里，公司等" />
+						<div style="clear:both;"></div>
+					</li>
+					<li class="tc-li1">
+						<p class="l-p">所在地区<span>*</span></p>
+						<input id="addressDistrict" type="text" placeholder="请输入地区" />
+						<div style="clear:both;"></div>
+					</li>
+                    <li class="tc-li1">
+                        <p class="l-p">详细地址<span>*</span></p>
+                        <textarea id="addressDetailed" class="textarea1" placeholder="请如实填写您的详细信息，如街道名称、门牌号、楼层号和房间号。"></textarea>
+                        <div style="clear:both;"></div>
+                    </li>
+                    <li class="tc-li1">
+                        <p class="l-p">收货人姓名<span>*</span></p>
+                        <input id="addressName" type="text" placeholder="请输入收件人姓名" />
+                        <div style="clear:both;"></div>
+                    </li>
+                    <li class="tc-li1">
+                        <p class="l-p">联系电话<span>*</span></p>
+                        <input id="addressPhone" type="text" placeholder="请输入联系电话"  />
+                        <div style="clear:both;"></div>
+                    </li>
+                </ul>
+                <button id="insertAddress" class="btn-pst2">保存</button>
+            </div>
+            <div class="man-info">
+            	<p id="address_length"></p>
+                <div class="man-if-con">
+                	<div class="man-tit">
+						<p class="p1">别名</p>
+                        <p class="p2">收货人</p>
+                        <p class="p3">所在地区</p>
+                        <p class="p4">详细地址</p>
+                        <p class="p5">手机</p>
+                        <p class="p6">操作</p>
+                    </div>
+                    <ul id="address_ul" class="man-ul1">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+	<!--底部服务-->
+	<div class="ft-service">
+		<div class="w1200">
+			<div class="sv-con-l2 f-l">
+				<dl>
+					<dt><a>新手上路</a></dt>
+					<dd>
+						<a href="http://localhost:8080/other/service.html">服务协议</a>
+						<a href="http://localhost:8080/other/onlinePayment.html">在线支付</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a>配送方式</a></dt>
+					<dd>
+						<a href="http://localhost:8080/other/distribution.html">配送费标准</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a>购物指南</a></dt>
+					<dd>
+						<a href="http://localhost:8080/other/FAQ.html">购物常见问题</a>
+						<a href="http://localhost:8080/other/shoppingProcess.html">购物流程</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a>售后服务</a></dt>
+					<dd>
+						<a href="http://localhost:8080/other/exchanged.html">退换货政策总则</a>
+						<a href="http://localhost:8080/other/exchanged2.html">自营商品退换货细则</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a>关于我们</a></dt>
+					<dd>
+						<a href="http://localhost:8080/other/about.html">关于我们</a>
+					</dd>
+				</dl>
+				<div style="clear:both;"></div>
+			</div>
+			<div class="sv-con-r2 f-r">
+				<p class="sv-r-tle">151-6264-6839</p>
+				<p>周一至周五9:00-16:00</p>
+				<p>（仅收市话费）</p>
+				<a href="http://wpa.qq.com/msgrd?v=3&uin=394597166&site=qq&menu=yes" target="_blank" class="zxkf">24小时在线客服</a>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+	$(function () {
+        var $address_length = $("#address_length");
+        var address_length;
+        var $insertAddress = $("#insertAddress");
+        //输入框
+        var $addressAlias = $("#addressAlias");
+        var addressAlias;
+        var $addressName = $("#addressName");
+        var $addressDistrict = $("#addressDistrict");
+        var $addressDetailed = $("#addressDetailed");
+        var $addressPhone = $("#addressPhone");
+        //保存事件
+        $insertAddress.on("click",function () {
+            var phoneNumReg = /^1[3|4|5|7|8]\d{9}$/;
+            var districtReg = /(.*?(省|自治区|北京市|天津市))+(.*?(市|自治州|地区|区划|县))+(.*?(区|县|镇|乡|街道))/;
+            if (address_length>=20){
+                alert("收货地址数量已达20，无法再添加！");
+                window.location.href = "/user/address.html";
+            }else if ($addressDistrict.val()==="") {
+                alert("请输入地区！");
+                $addressDistrict.focus();
+            }else if(!districtReg.test($addressDistrict.val())){
+                alert("地区输入错误！地区以省市区为单位");
+                $addressDistrict.focus();
+			}else if($addressDetailed.val()===""){
+                alert("请输入详细地址！");
+                $addressDetailed.focus();
+            }else if ($addressName.val()===""){
+                alert("请输入收件人姓名！");
+                $addressName.focus();
+			}else if ($addressPhone.val()===""){
+                alert("请输入手机号！");
+                $addressPhone.focus();
+			}else if (!phoneNumReg.test($addressPhone.val())){
+                alert("手机号码错误！手机号码11位数字，目前支持前两位13、14、15、16、17、18手机号码");
+                $addressPhone.focus();
+            }else{
+                if ($addressAlias.val()===""){
+                    addressAlias = $addressName.val();
+				} else{
+                    addressAlias = $addressAlias.val();
+				}
+                $.ajax({
+                    url: "http://localhost:8080/user/insertAddress",
+                    method: "POST",
+                    data: {
+                        addressAlias:addressAlias,
+                        addressName:$addressName.val(),
+                        addressDistrict:$addressDistrict.val(),
+                        addressDetailed:$addressDetailed.val(),
+                        addressPhone:$addressPhone.val()
+                    },
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.result){
+                            alert(result.data);
+                            window.location.href = "http://localhost:8080/user/address.html";
+						} else{
+                            alert(result.data);
+                            window.location.href = "http://localhost:8080/user/login.html";
+						}
+                    }
+                });
+			}
+        });
+	    //获得所有的收货地址数据
+        $.ajax({
+            url: "http://localhost:8080/user/addressAll",
+            method: "POST",
+            dataType: "json",
+            success: function (result) {
+                //判定是否登录
+                if (result.result) {
+                    //判定是否有收货地址
+                    if (result.result2){
+                        //显示已保存地址数量
+                        var temp = "您已经保存"+result.addressList.length+"个地址！最多可创建20个";
+                        $address_length.text(temp);
+                        address_length = result.addressList.length;
+                        var $address_ul = $("#address_ul");
+                        //遍历地址
+                        $.each(result.addressList,function (index,value) {
+                            var $li = $("<li></li>");
+                            var $p1 = $("<p class='p1'>"+value.addressAlias+"</p>");
+                            var $p2 = $("<p class='p2'>"+value.addressName+"</p>");
+                            var $p3 = $("<p class='p3'>"+value.addressDistrict+"</p>");
+                            var $p4 = $("<p class='p4'>"+value.addressDetailed+"</p>");
+                            //隐藏手机号
+                            var temp = value.addressPhone;
+                            var temp_1 = temp.split('');
+                            for (var i = 3;i < 7;i++){
+                                temp_1[i] = "*";
+							}
+							temp = temp_1.join('');
+                            var $p5 = $("<p class='p5'>"+temp+"</p>");
+                            var $p6 = $("<p class='p6'></p>");
+                            var $p6_a1 = $("<a>修改</a>");
+                            $p6_a1.on("click",function () {
+                                $addressAlias.val(value.addressAlias);
+                                $addressDistrict.val(value.addressDistrict);
+                                $addressDetailed.val(value.addressDetailed);
+                                $addressName.val(value.addressName);
+                                $addressPhone.val(value.addressPhone);
+                                $insertAddress.off("click").on("click",function () {
+                                    var phoneNumReg = /^1[3|4|5|7|8]\d{9}$/;
+                                    var districtReg = /(.*?(省|自治区|北京市|天津市))+(.*?(市|自治州|地区|区划|县))+(.*?(区|县|镇|乡|街道))/;
+                                    if ($addressDistrict.val()==="") {
+                                        alert("请输入地区！");
+                                        $addressDistrict.focus();
+                                    }else if(!districtReg.test($addressDistrict.val())){
+                                        alert("地区输入错误！地区以省市区为单位");
+                                        $addressDistrict.focus();
+                                    }else if($addressDetailed.val()===""){
+                                        alert("请输入详细地址！");
+                                        $addressDetailed.focus();
+                                    }else if ($addressName.val()===""){
+                                        alert("请输入收件人姓名！");
+                                        $addressName.focus();
+                                    }else if ($addressPhone.val()===""){
+                                        alert("请输入手机号！");
+                                        $addressPhone.focus();
+                                    }else if (!phoneNumReg.test($addressPhone.val())){
+                                        alert("手机号码错误！手机号码11位数字，目前支持前两位13、14、15、16、17、18手机号码");
+                                        $addressPhone.focus();
+                                    }else{
+                                        if ($addressAlias.val()===""){
+                                            addressAlias = $addressName.val();
+                                        } else{
+                                            addressAlias = $addressAlias.val();
+                                        }
+                                        $.ajax({
+                                            url: "http://localhost:8080/user/updateAddress",
+                                            method: "POST",
+                                            data: {
+                                                addressId:value.addressId,
+                                                addressAlias:addressAlias,
+                                                addressName:$addressName.val(),
+                                                addressDistrict:$addressDistrict.val(),
+                                                addressDetailed:$addressDetailed.val(),
+                                                addressPhone:$addressPhone.val()
+                                            },
+                                            dataType: "json",
+                                            success: function (result) {
+                                                if (result.result){
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/user/address.html";
+                                                } else{
+                                                    alert(result.data);
+                                                    window.location.href = "http://localhost:8080/user/login.html";
+                                                }
+                                            }
+                                        });
+                                    }
+                                })
+                            });
+							var $p6_a2 = $("<a> | </a>");
+                            var $p6_a3 = $("<a href=''>删除</a>");
+                            $p6_a3.on("click",function () {
+                                if (confirm("确定删除吗？")){
+                                    $.ajax({
+                                        url: "http://localhost:8080/user/deleteAddress",
+                                        method: "POST",
+                                        data: {
+                                            addressId:value.addressId
+                                        },
+                                        dataType: "json",
+                                        success: function (result) {
+                                            if (result){
+                                                alert(result.data);
+                                                window.location.href = "http://localhost:8080/user/address.html";
+                                            } else{
+                                                alert(result.data);
+                                                window.location.href = "http://localhost:8080/user/login.html";
+                                            }
+                                        }
+                                    });
+								}
+                            });
+                            var $p7 = $("<p class='p7'></p>");
+                            var $p7_a1;
+                            if (null !=value.defaultaddress) {
+                                $p7_a1 = $("<a>默认地址</a>");
+							}else{
+                                $p7_a1 = $("<a href=''>设置默认</a>");
+                                $p7_a1.on("click",function () {
+                                    $.ajax({
+                                        url: "http://localhost:8080/user/updateDefaultAddress",
+                                        method: "POST",
+                                        data: {
+                                            addressId:value.addressId
+                                        },
+                                        dataType: "json",
+                                        success: function (result) {
+                                            if (result){
+                                                alert(result.data);
+                                                window.location.href = "http://localhost:8080/user/address.html";
+											} else{
+                                                alert(result.data);
+                                                window.location.href = "http://localhost:8080/user/login.html";
+                                            }
+                                        }
+                                    });
+                                })
+                            }
+                            var $div = $("<div style='clear: both'></div>");
+                            $p6.append($p6_a1,$p6_a2,$p6_a3);
+                            $p7.append($p7_a1);
+                            $li.append($p1,$p2,$p3,$p4,$p5,$p6,$p7,$div);
+                            $address_ul.append($li);
+                        })
+					}else{//没有则显示暂无收货地址
+                        $address_length.text(result.data);
+                        address_length = 0;
+					}
+				}else{
+                    alert(result.data);
+                    window.location.href = "http://localhost:8080/user/login.html";
+                }
+            }
+        });
+        //搜索商品
+        var $goodsName = $("#goodsName");
+        var $selectGoods = $("#selectGoods");
+        $selectGoods.on("click",function () {
+            if ($goodsName.val()===""){
+                alert("请输入需要搜索的内容！");
+                $goodsName.focus();
+            }else{
+                $.ajax({
+                    url: "http://localhost:8080/goods/selectgoods",
+                    method: "POST",
+                    data:{
+                        goodsName:$goodsName.val()
+                    },
+                    dataType: "json",
+                    success: function () {
+                        window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                    }
+                });
+            }
+        });
+        // 商品分类快捷
+        $.ajax({
+            url: "http://localhost:8080/category",
+            method: "POST",
+            dataType: "json",
+            success: function (result) {
+                //商品分类标签
+                var $category = $("#category");
+                var $category_li = $("#category_li");
+                //循环遍历result
+                $.each(result,function (index, value) {
+                    //分类盒子
+                    var $div_1 = $("<div></div>");
+                    $div_1.addClass("kj-info1");
+                    //分类标题
+                    var $dl_1 = $("<dl></dl>");
+                    $dl_1.addClass("kj-dl1");
+                    //标题
+                    var $dt_1 = $("<dt><a href='#'>"+value.categoryName+"</a></dt>");
+                    $dt_1.on("click",function () {
+                        $.ajax({
+                            url: "http://localhost:8080/goods/selectgoodsAndCategoryId",
+                            method: "POST",
+                            data:{
+                                categoryId:value.categoryId
+                            },
+                            dataType: "json",
+                            success: function () {
+                                window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                            }
+                        });
+                    });
+                    var $li = $("<li><a href='#'>"+value.categoryName+"</a></li>");
+                    $li.on("click",function () {
+                        $.ajax({
+                            url: "http://localhost:8080/goods/selectgoodsAndCategoryId",
+                            method: "POST",
+                            data:{
+                                categoryId:value.categoryId
+                            },
+                            dataType: "json",
+                            success: function () {
+                                window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                            }
+                        });
+                    });
+                    var text = "";
+                    var i = 0;
+                    $.each(value.subclassificationList,function (index2,value2) {
+                        i++;
+                        if(i%3==0){
+                            text = text + value2.subclassificationName+"<br/>";
+                        }else{
+                            text = text + value2.subclassificationName+"/";
+                        }
+                    });
+                    //内容
+                    var $dd_1 = $("<dd>"+text+"</dd>");
+                    $dl_1.append($dt_1,$dd_1);
+                    $div_1.append($dl_1);
+                    //子分类
+                    var $div_2 = $("<div></div>");
+                    $div_2.addClass("kj-if-show");
+                    $.each(value.subclassificationList,function (index3,value3) {
+                        var $dl_2 = $("<dl></dl>");
+                        var $dt_2 = $("<dt><a href='#'>"+value3.subclassificationName+"</a></dt>");
+                        $dt_2.on("click",function () {
+                            $.ajax({
+                                url: "http://localhost:8080/goods/selectgoodsAndSubclassificationId",
+                                method: "POST",
+                                data:{
+                                    subclassificationId:value3.subclassificationId
+                                },
+                                dataType: "json",
+                                success: function () {
+                                    window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                                }
+                            });
+                        });
+                        var $dd_2 = $("<dd></dd>");
+                        //次分类
+                        $.each(value3.subseriesList,function (index4,value4) {
+                            var $a = $("<a href='#'>"+value4.subseriesName+"</a>");
+                            $a.on("click",function () {
+                                $.ajax({
+                                    url: "http://localhost:8080/goods/selectgoodsAndSubseriesId",
+                                    method: "POST",
+                                    data:{
+                                        subseriesId:value4.subseriesId
+                                    },
+                                    dataType: "json",
+                                    success: function () {
+                                        window.location.href = "http://localhost:8080/goods/goodsPaging.html";
+                                    }
+                                });
+                            });
+                            $dd_2.append($a);
+                        });
+                        var $div_3 = $("<div style='clear: both'></div>");
+                        $dl_2.append($dt_2,$dd_2,$div_3);
+                        $div_2.append($dl_2);
+                    });
+                    $div_1.append($div_2);
+                    //鼠标移入事件
+                    $div_1.on("mouseover",function () {
+                        $div_1.removeClass();
+                        $div_1.addClass("kj-info1 hover-show-bg");
+                        $div_2.css("display","block");
+                    });
+                    //鼠标移出事件
+                    $div_1.on("mouseout",function () {
+                        $div_1.removeClass();
+                        $div_1.addClass("kj-info1");
+                        $div_2.css("display","none");
+                    });
+                    $category.append($div_1);
+                    $category_li.append($li);
+                });
+                var $div_4 = $("<div style='clear: both'></div>")
+                $category_li.append($div_4);
+            }
+        });
+    })
+</script>
+</body>
+</html>

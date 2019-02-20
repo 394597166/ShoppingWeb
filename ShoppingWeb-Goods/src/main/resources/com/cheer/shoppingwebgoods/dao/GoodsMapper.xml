@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebgoods.dao.GoodsMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="selectGoodsAndId" resultMap="goods">
+        select * from goods where goodsId = #{goodsId} AND goodsState = #{goodsState}
+    </select>
+    <select id="selectGoodsAndgoodsId" resultMap="goods">
+        select * from goods where goodsId = #{goodsId}
+    </select>
+    <select id="selectAllGoods" resultMap="goods">
+        select * from goods
+        <trim prefix="where">
+            <if test="goodsState != null">
+                goodsState = #{goodsState}
+            </if>
+        </trim>
+    </select>
+    <select id="selectAllGoodsLikeName" resultMap="goods">
+        select * from goods where goodsName like #{goodsName}
+    </select>
+    <select id="selectgoodsAndCategory" resultMap="goods">
+        select * from goods
+        <trim prefix="where" prefixOverrides="AND">
+        <if test="categoryId != null">
+            categoryId = #{categoryId}
+        </if>
+        <if test="subclassificationId != null">
+            AND subclassificationId = #{subclassificationId}
+        </if>
+        <if test="subseriesId != null">
+            AND subseriesId = #{subseriesId}
+        </if>
+    </trim>
+    </select>
+    <update id="updateGoods">
+        update goods set goodsState = #{goodsState} where goodsId = #{goodsId}
+    </update>
+    <insert id="insertGoods">
+        insert into goods values (#{goodsId},#{goodsName},#{goodsSpecification},#{goodsDescribe},#{goodsPrice},#{goodsVipPrice},#{categoryId},#{subclassificationId},#{subseriesId},#{goodsState})
+    </insert>
+    <resultMap id="goods" type="com.cheer.shoppingwebgoods.model.Goods">
+        <id property="goodsId" column="goodsId"></id>
+        <result property="goodsName" column="goodsName"></result>
+        <result property="goodsSpecification" column="goodsSpecification"></result>
+        <result property="goodsDescribe" column="goodsDescribe"></result>
+        <result property="goodsPrice" column="goodsPrice"></result>
+        <result property="goodsVipPrice" column="goodsVipPrice"></result>
+        <association property="category" column="categoryId" javaType="com.cheer.shoppingwebcategory.model.Category" fetchType="lazy" select="com.cheer.shoppingwebcategory.dao.CategoryMapper.selectCategory"></association>
+        <association property="subclassification" column="subclassificationId" javaType="com.cheer.shoppingwebcategory.model.Subclassification" fetchType="lazy" select="com.cheer.shoppingwebcategory.dao.SubclassificationMapper.selectSubclassification"></association>
+        <association property="subseries" column="subseriesId" javaType="com.cheer.shoppingwebcategory.model.Subseries" fetchType="lazy" select="com.cheer.shoppingwebcategory.dao.SubseriesMapper.selectSubseries"></association>
+        <collection property="inventoryList" column="goodsId" ofType="com.cheer.shoppingwebgoods.model.Inventory" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.InventoryMapper.selectInventoryAndgoodsId"></collection>
+        <collection property="pictureList" column="goodsId" ofType="com.cheer.shoppingwebgoods.model.Picture" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.PictureMapper.selectPictureAndgoodsId"></collection>
+        <collection property="picturegoodsList" column="goodsId" ofType="com.cheer.shoppingwebgoods.model.Picturegoods" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.PicturegoodsMapper.selectPicturegoodsAndgoodsId"></collection>
+        <collection property="commentgoodsList" column="goodsId" ofType="com.cheer.shoppingwebgoods.model.Commentgoods" fetchType="lazy" select="com.cheer.shoppingwebgoods.dao.CommentgoodsMapper.selectCommentgoodsAndgoodsId"></collection>
+    </resultMap>
+</mapper>

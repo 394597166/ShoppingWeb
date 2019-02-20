@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.shoppingwebbalance.dao.BalanceItemMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="getAllBalanceItem" resultType="com.cheer.shoppingwebbalance.model.BalanceItem">
+        select * from balanceitem where balanceId = #{balanceId} order by balanceItemData DESC
+    </select>
+    <insert id="insertBanlanceItem">
+        insert into balanceitem values (#{balanceItemId},#{balanceItemData},#{balanceItemMoney},#{balanceItemOperation},#{balanceItemRemark},#{balanceId})
+    </insert>
+</mapper>
